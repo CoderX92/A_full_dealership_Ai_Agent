@@ -25,7 +25,7 @@ from langchain.tools import tool
 from flask import Flask, request, jsonify, current_app
 from langchain.agents import AgentExecutor, create_tool_calling_agent
 from langchain_ollama import ChatOllama
-from try3 import upload_and_search
+from getway import upload_and_search
 from tools.agents import AGENTS, get_all_agents
 from tools.meeting import book_meeting, book_meeting_with_agent, cancel_meeting, check_availability, list_bookings
 from tools.email import send_email
