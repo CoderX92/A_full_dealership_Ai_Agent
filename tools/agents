@@ -1,0 +1,39 @@
+#### Add agents for further assistance scenarios that needs human interaction
+from typing import List, Dict
+
+class SalesAgent:
+    def __init__(self, name: str, email: str, whatsapp: str):
+        self.name = name
+        self.email = email
+        self.whatsapp = whatsapp
+
+# Simple agents database
+AGENTS: List[SalesAgent] = [
+    SalesAgent(
+        name="John Doe",
+        email="john@cardealership.com",
+        whatsapp="+1234567890"
+    ),
+    SalesAgent(
+        name="Jane Smith",
+        email="jane@cardealership.com",
+        whatsapp="+1987654321"
+    )
+]
+
+def get_all_agents() -> List[Dict]:
+    """Return all agents' contact information"""
+    return [
+        {
+            "name": agent.name,
+            "email": agent.email,
+            "whatsapp": agent.whatsapp
+        }
+        for agent in AGENTS
+    ]
+
+def notify_agent(agent_email: str, client_info: Dict) -> bool:
+    """Simple notification function (to be implemented with your email system)"""
+    print(f"Notifying {agent_email} about new lead: {client_info}")
+    # Here you wud connect to your actual email system
+    return True
